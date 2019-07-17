@@ -16,15 +16,15 @@ public class SaleTicket1 implements Runnable {
 	public void run() {
 
 		for (int i = 0; i <= 100; i++) {
-			try {
+//			try {
+////				Thread.currentThread();
+////				Thread.sleep(10);
+//				
 //				Thread.currentThread();
-//				Thread.sleep(10);
-				
-				Thread.currentThread();
-				Thread.yield();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+//				Thread.yield();
+//			} catch (Exception e) {
+//				e.printStackTrace();
+//			}
 			System.out.println(Thread.currentThread().getName() + "打印票号：" + i);
 		}
 	}
