@@ -1,0 +1,7 @@
+
+
+1.锁方法  synchronized void methodName(){  }
+
+2.锁共享对象  synchronized(this){   }
+
+3.锁对象:  Lock lock;调用代码之前lock.lock();调用代码之后lock.unlock();

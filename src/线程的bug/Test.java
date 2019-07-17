@@ -8,7 +8,10 @@ public class Test {
 		/**
 		 * 出现bug：卖了三张同样的票
 		 * 1、三个线程操作的是同一个对象
-		 * 2、
+		 * 2、三个 线程访问的count是同一个
+		 * 对象的属性，然后代码执行过程中
+		 * 时间片随时会被抢走，所以代码
+		 * 会出问题
 		 */
 		SaleTicket s1 = new SaleTicket(t);
 		new Thread(s1).start();
