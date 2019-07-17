@@ -15,7 +15,24 @@ public class Test2 {
 		SaleTicket2 s1 = new SaleTicket2();
 		s1.start();
 		
+		try {
+			s1.join();//调用join方法的子线程先执行完，再执行主线程，会让线程从并发变成顺序执行
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 		SaleTicket2 s2 = new SaleTicket2();
 		s2.start();
+		
+		try {
+			s2.join();//调用join方法的子线程先执行完，再执行主线程，会让线程从并发变成顺序执行
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		
+		for (int i = 0; i < 100; i++) {
+			System.out.println(Thread.currentThread().getName() + "," + i);
+		}
 	}
 }

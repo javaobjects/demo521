@@ -1,0 +1,30 @@
+
+以下代码执行效果：先把子线程s1执行完，然后s2，最后main主线程
+
+public static void main(String[] args) {
+		SaleTicket2 s1 = new SaleTicket2();
+
+		s1.start();
+		try {
+			s1.join();//调用join方法的子线程先执行完，再执行主线程，会让线程从并发编程顺序执行
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		SaleTicket2 s2 = new SaleTicket2();
+
+		s2.start();
+		try {
+			s2.join();//调用join方法的子线程先执行完，再执行主线程，会让线程从并发编程顺序执行
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+		/*SaleTicket2 s2 = new SaleTicket2();
+		s2.start();*/
+		
+		for (int i = 0; i < 100; i++) {
+			System.out.println(Thread.currentThread().getName()+","+i);
+		}
+
+	}
