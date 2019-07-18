@@ -1,0 +1,17 @@
+
+
+BS
+Browser
+Server
+所有可以通过浏览器访问的App都是BS架构的。
+
+
+CS
+
+Client
+Server
+
+腾讯QQ  微信客户端程序  各种银行客户端程序
+
+
+
